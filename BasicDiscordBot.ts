@@ -58,7 +58,7 @@ client.on('interactionCreate', (interaction: Interaction) => {
 			case 'reverse':
 				//we use the interaction.option object to get any named parameters we used when
 				//registering the commands in the deploy script
-				const reversibleMessage = interaction.options.getString('message');
+				const reversibleMessage = interaction.options.getString('message') ?? '';
 				interaction.reply(Array.from(reversibleMessage).reverse().join(''));
 				break;
 			case 'hi':
